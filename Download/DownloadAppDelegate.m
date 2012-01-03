@@ -25,6 +25,7 @@
 #import "DownloadResource.h"
 
 #define WALLPAPER_TAB 4
+#define VIDEOPLAYER_TAB 4
 
 NSString* GlobalGetServerURL()
 {
@@ -111,7 +112,7 @@ enum TAB_INDEX {
 			  hasNavController:YES			
 			   viewControllers:controllers];
 	
-    [UIUtils addViewController:[VideoPlayController alloc]
+    [UIUtils addViewController:[WallpaperController alloc]
 					 viewTitle:NSLS(@"kWallpaper")				 
 					 viewImage:DOWNLOAD_ICON
 			  hasNavController:YES			
@@ -267,7 +268,7 @@ enum TAB_INDEX {
 
 - (BOOL)hasWallpaperTab
 {
-    return (BOOL)[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFHasWallpaperTab"];
+    return [[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFHasWallpaperTab"]boolValue];
 }
 
 - (void) gotoWallpaperTab
@@ -278,7 +279,23 @@ enum TAB_INDEX {
 - (WallpaperController*) getWallpaperTab
 {
     return (WallpaperController*)([[self.tabBarController.viewControllers objectAtIndex:WALLPAPER_TAB] topViewController]);
+} 
+
+- (BOOL)hasVideoPlayerTab
+{
+    return [[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFHasVideoPlayerTab"]boolValue];
 }
+
+- (void) gotoVideoPlayerTab
+{
+    [self setSeletedTabbarIndex:VIDEOPLAYER_TAB];
+}
+
+- (VideoPlayController*) getVideoPlayerTab
+{
+    return (VideoPlayController*)([[self.tabBarController.viewControllers objectAtIndex:VIDEOPLAYER_TAB] topViewController]);
+}
+
 
 
 @end

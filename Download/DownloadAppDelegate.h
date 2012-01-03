@@ -15,6 +15,7 @@
 #import "ReviewRequest.h"
 #import "WebViewTouchWindow.h"
 #import "WallpaperController.h"
+#import "VideoPlayController.h"
 
 #define kAppId			@"488119324"					// To be changed for each project
 #define kMobClickKey	@"4ec3d3045270151da9000025"		// To be changed for each project
@@ -36,4 +37,8 @@
 - (BOOL)hasWallpaperTab;
 - (void) gotoWallpaperTab;
 - (WallpaperController*) getWallpaperTab;
+
+- (BOOL)hasVideoPlayerTab;
+- (void) gotoVideoPlayerTab;
+- (VideoPlayController*) getVideoPlayerTab;
 @end
