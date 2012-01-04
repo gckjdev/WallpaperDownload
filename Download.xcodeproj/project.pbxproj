@@ -502,6 +502,8 @@
 		EA24B5481473632700BFE1BF /* TopDownloadItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA24B5461473632700BFE1BF /* TopDownloadItemCell.xib */; };
 		EA89FE8D14B2A701002645EA /* WallpaperController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA89FE8B14B2A701002645EA /* WallpaperController.m */; };
 		EA89FE8E14B2A701002645EA /* WallpaperController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA89FE8C14B2A701002645EA /* WallpaperController.xib */; };
+		EA92E1BE14B3F3F300469067 /* BookController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA92E1BC14B3F3F300469067 /* BookController.m */; };
+		EA92E1BF14B3F3F300469067 /* BookController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA92E1BD14B3F3F300469067 /* BookController.xib */; };
 		EAAF75F5147F60E8009A61CE /* ViewDecompressItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAF75F3147F60E7009A61CE /* ViewDecompressItemController.m */; };
 		EAAF75F6147F60E8009A61CE /* ViewDecompressItemController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAAF75F4147F60E8009A61CE /* ViewDecompressItemController.xib */; };
 		EAC56224147CE36C00DD2AFF /* ViewImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC56222147CE36C00DD2AFF /* ViewImageController.m */; };
@@ -1303,6 +1305,9 @@
 		EA89FE8A14B2A701002645EA /* WallpaperController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WallpaperController.h; sourceTree = "<group>"; };
 		EA89FE8B14B2A701002645EA /* WallpaperController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WallpaperController.m; sourceTree = "<group>"; };
 		EA89FE8C14B2A701002645EA /* WallpaperController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WallpaperController.xib; sourceTree = "<group>"; };
+		EA92E1BB14B3F3F300469067 /* BookController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookController.h; sourceTree = "<group>"; };
+		EA92E1BC14B3F3F300469067 /* BookController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookController.m; sourceTree = "<group>"; };
+		EA92E1BD14B3F3F300469067 /* BookController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookController.xib; sourceTree = "<group>"; };
 		EAAF75F2147F60E7009A61CE /* ViewDecompressItemController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewDecompressItemController.h; sourceTree = "<group>"; };
 		EAAF75F3147F60E7009A61CE /* ViewDecompressItemController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewDecompressItemController.m; sourceTree = "<group>"; };
 		EAAF75F4147F60E8009A61CE /* ViewDecompressItemController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewDecompressItemController.xib; sourceTree = "<group>"; };
@@ -2701,6 +2706,7 @@
 		CAEA38E11467C3FA006D2975 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				EA92E1B914B3F3E000469067 /* Book */,
 				EA89FE8914B2A589002645EA /* Wallpaper */,
 				EA9057DB14AC1C0800B539BF /* Video */,
 				EA27B65814A81A630018361E /* Music */,
@@ -2936,6 +2942,16 @@
 				EAE7675314AC22F600362CC5 /* VideoPlayController.xib */,
 			);
 			name = Video;
+			sourceTree = "<group>";
+		};
+		EA92E1B914B3F3E000469067 /* Book */ = {
+			isa = PBXGroup;
+			children = (
+				EA92E1BB14B3F3F300469067 /* BookController.h */,
+				EA92E1BC14B3F3F300469067 /* BookController.m */,
+				EA92E1BD14B3F3F300469067 /* BookController.xib */,
+			);
+			name = Book;
 			sourceTree = "<group>";
 		};
 		EAE9CFA01485F8E800EB8755 /* ssziparchive */ = {
@@ -3258,6 +3274,7 @@
 				C2C1F7C014A9643100EED2D7 /* MusicPlayController.xib in Resources */,
 				EAE7675514AC22F600362CC5 /* VideoPlayController.xib in Resources */,
 				EA89FE8E14B2A701002645EA /* WallpaperController.xib in Resources */,
+				EA92E1BF14B3F3F300469067 /* BookController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3554,6 +3571,7 @@
 				C2C1F7BF14A9643100EED2D7 /* MusicPlayController.m in Sources */,
 				EAE7675414AC22F600362CC5 /* VideoPlayController.m in Sources */,
 				EA89FE8D14B2A701002645EA /* WallpaperController.m in Sources */,
+				EA92E1BE14B3F3F300469067 /* BookController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

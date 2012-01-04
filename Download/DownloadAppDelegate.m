@@ -18,7 +18,7 @@
 #import "ResourceCategoryController.h"
 #import "AboutController.h"
 #import "VideoPlayController.h"
-
+#import "BookController.h"
 #import "DownloadService.h"
 #import "ResourceService.h"
 
@@ -26,6 +26,8 @@
 
 #define WALLPAPER_TAB 4
 #define VIDEOPLAYER_TAB 4
+#define BOOK_TAB 4
+
 
 NSString* GlobalGetServerURL()
 {
@@ -265,7 +267,7 @@ enum TAB_INDEX {
     UIButton *button = [_tabBarController.buttons objectAtIndex:index];
     [_tabBarController selectedTab:button];
 }
-
+// for Wallpaper
 - (BOOL)hasWallpaperTab
 {
     return [[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFHasWallpaperTab"]boolValue];
@@ -281,6 +283,7 @@ enum TAB_INDEX {
     return (WallpaperController*)([[self.tabBarController.viewControllers objectAtIndex:WALLPAPER_TAB] topViewController]);
 } 
 
+// for Video
 - (BOOL)hasVideoPlayerTab
 {
     return [[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFHasVideoPlayerTab"]boolValue];
@@ -296,6 +299,22 @@ enum TAB_INDEX {
     return (VideoPlayController*)([[self.tabBarController.viewControllers objectAtIndex:VIDEOPLAYER_TAB] topViewController]);
 }
 
+// for Book
+
+- (BOOL)hasBookTab
+{
+    return [[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFHasBookTab"]boolValue];
+}
+
+- (void) gotoBookTab
+{
+    [self setSeletedTabbarIndex:BOOK_TAB];
+}
+
+- (BookController*) getBookTab
+{
+    return (BookController*)([[self.tabBarController.viewControllers objectAtIndex:BOOK_TAB] topViewController]);
+}
 
 
 @end
