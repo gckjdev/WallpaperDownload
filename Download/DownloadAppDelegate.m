@@ -24,6 +24,7 @@
 
 #import "DownloadResource.h"
 
+#define MUSICPLAYER_TAB 4
 #define WALLPAPER_TAB 4
 #define VIDEOPLAYER_TAB 4
 #define BOOK_TAB 4
@@ -267,6 +268,23 @@ enum TAB_INDEX {
     UIButton *button = [_tabBarController.buttons objectAtIndex:index];
     [_tabBarController selectedTab:button];
 }
+
+// for Music
+- (BOOL)hasMusicPlayerTab
+{
+    return [[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFHasMusicPlayerTab"]boolValue];
+}
+
+- (void) gotoMusicPlayerTab
+{
+    [self setSeletedTabbarIndex:MUSICPLAYER_TAB];
+}
+
+- (MusicPlayController*) getMusicPlayerTab
+{
+    return (MusicPlayController*)([[self.tabBarController.viewControllers objectAtIndex:MUSICPLAYER_TAB] topViewController]);
+}
+
 // for Wallpaper
 - (BOOL)hasWallpaperTab
 {

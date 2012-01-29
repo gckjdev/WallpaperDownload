@@ -14,6 +14,7 @@
 #import "PPTabBarController.h"
 #import "ReviewRequest.h"
 #import "WebViewTouchWindow.h"
+#import "MusicPlayController.h"
 #import "WallpaperController.h"
 #import "VideoPlayController.h"
 #import "BookController.h"
@@ -35,6 +36,10 @@
 
 
 - (void) setSeletedTabbarIndex:(NSInteger)index;
+- (BOOL)hasMusicPlayerTab;
+- (void) gotoMusicPlayerTab;
+- (MusicPlayController*) getMusicPlayerTab;
+
 - (BOOL)hasWallpaperTab;
 - (void) gotoWallpaperTab;
 - (WallpaperController*) getWallpaperTab;
