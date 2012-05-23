@@ -21,8 +21,8 @@
 #import "BookController.h"
 #import "DownloadService.h"
 #import "ResourceService.h"
-
 #import "DownloadResource.h"
+#import "MobClick.h"
 
 #define MUSICPLAYER_TAB 4
 #define WALLPAPER_TAB 4
@@ -54,11 +54,6 @@ enum TAB_INDEX {
 @synthesize dataManager;
 @synthesize reviewRequest;
 @synthesize wallpaperTab;
-
-- (NSString *)appKey
-{
-    return kMobClickKey;
-}
 
 - (void)dealloc
 {
@@ -162,14 +157,12 @@ enum TAB_INDEX {
 	[controllers release];
 }
 
-- (void)initMobClick
-{
-    [MobClick setDelegate:self reportPolicy:BATCH];
-}
-
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [MobClick startWithAppkey:DOWNLOAD_UMENG_APP_KEY reportPolicy:REALTIME channelId:nil];
+    [MobClick updateOnlineConfig];
+    
     self.window = [[[WebViewTouchWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     [self initTabViewControllers];
     
@@ -179,7 +172,6 @@ enum TAB_INDEX {
     // init service
     [DownloadService defaultService];   
     [ResourceService defaultService];
-	[self initMobClick];
     
     // test
 
@@ -207,8 +199,6 @@ enum TAB_INDEX {
      Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
      Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
      */
-    
-    [MobClick appTerminated];
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
@@ -251,7 +241,6 @@ enum TAB_INDEX {
      Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
      */
     
-    [MobClick appLaunched];
     [[DownloadService defaultService] resumeAllDownloadItem];
     
 }
@@ -264,7 +253,6 @@ enum TAB_INDEX {
      See also applicationDidEnterBackground:.
      */
     
-    [MobClick appTerminated];
 }
 
 
